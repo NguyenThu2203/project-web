@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM Example</title>
+</head>
+<body>
+    <p id="paragraph">Nội dung ban đầu.</p>
+    <button id="changeButton">Thay đổi nội dung</button>
+
+    <script>
+        // Lấy tham chiếu đến phần tử HTML và nút
+        var paragraph = document.getElementById('paragraph');
+        var changeButton = document.getElementById('changeButton');
+
+        // Thêm sự kiện 'click' vào nút
+        changeButton.addEventListener('click', function () {
+            // Thay đổi nội dung của phần tử <p>
+            paragraph.textContent = "Nội dung đã thay đổi!";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập jQuery Events</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Xử lý sự kiện khi người dùng nhấp vào nút "Click me!"
+            $("#buttonClick").click(function() {
+                alert("Button Clicked!");
+            });
+
+            // Xử lý sự kiện khi người dùng nhấn Enter trong ô văn bản
+            $("#textInput").keypress(function(event) {
+                if (event.keyCode === 13) { // Kiểm tra phím Enter (mã 13)
+                    var inputValue = $(this).val();
+                    $("#resultDiv").text("Text entered: " + inputValue);
+                }
+            });
+
+            // Xử lý sự kiện khi người dùng di chuyển chuột qua ảnh
+            $("#mainImage").mouseenter(function() {
+                $(this).attr("src", "bread.png"); // Thay đổi đường dẫn ảnh
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Bài tập jQuery Events</h1>
+    
+    <button id="buttonClick">Click me!</button>
+    <input type="text" id="textInput">
+    <img id="mainImage" src="salads.jpg" alt="Main Image">
+    <div id="resultDiv"></div>
+</body>
+</html>
